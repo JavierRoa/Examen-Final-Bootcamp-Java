@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="Stylesheet" href="/css/MyStyle.css">
+    <title>Creación De Curso</title>
+</head>
+<body>
+    <nav th:replace="components/header::navbar"></nav>
+    <div class="container">
+        <div class="col-lg-6">
+            <h1>CREACIÓN DE CURSO</h1>
+            <form th:action="@{/course/register}" method="post" th:object="${cCurso}">
+                <div class="form-group">
+                    <label th:for="descripcion">Nombre Del Curso</label>
+                    <input class="form-control" type="text" name="descripcion" placeholder="Nombre Del Curso" th:field="*{descripcion}">
+                    <span th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}"></span>
+                </div>
+                <div class="form-group">
+                    <label th:for="cuposDisponibles">Cupos Totales</label>
+                    <input class="form-control" type="number" name="cuposDisponibles" placeholder="Cupos Disponibles" th:field="*{cuposDisponibles}">
+                    <span th:if="${#fields.hasErrors('cuposDisponibles')}" th:errors="*{cuposDisponibles}"></span>
+                </div>
+                <div class="form-group">
+                    <label th:for="cuposRestantes">Cupos Disponibles</label>
+                    <input class="form-control" type="number" name="cuposRestantes" placeholder="Cupos Disponibles" th:field="*{cuposRestantes}">
+                    <span th:if="${#fields.hasErrors('cuposRestantes')}" th:errors="*{cuposRestantes}"></span>
+                </div>
+                <div class="form-group">
+                    <label th:for="fechaInicio">Fecha de Inicio</label>
+                    <input class="form-control" type="date" name="fechaInicio" placeholder="Fecha de Inicio del Curso" th:field="*{fechaInicio}">
+                    <span th:if="${#fields.hasErrors('fechaInicio')}" th:errors="*{fechaInicio}"></span>
+                    <span th:text="${mensaje}"></span>
+                </div>
+                <div class="form-group">
+                    <label th:for="fechaTermino">Fecha de Término</label>
+                    <input class="form-control" type="date" name="fechaTermino" placeholder="Fecha de Término del Curso" th:field="*{fechaTermino}">
+                    <span th:if="${#fields.hasErrors('fechaTermino')}" th:errors="*{fechaTermino}"></span>
+                </div>
+                <div class="form-group">
+                    <label th:for="contenidos">Contenidos Del Curso</label>
+                    <textarea class="form-control" type="textarea" name="contenidos" placeholder="Contenidos Del Curso" th:field="*{contenidos}"></textarea>
+                    <span th:if="${#fields.hasErrors('contenidos')}" th:errors="*{contenidos}"></span>
+                </div>
+                <div class="form-group">
+                    <label th:for="imagenRef">Imagen</label>
+                    <input class="form-control" type="text" name="imagenRef" placeholder="Imagen Referencial" th:field="*{imagenRef}">
+                    <span th:if="${#fields.hasErrors('imagenRef')}" th:errors="*{imagenRef}"></span>
+                </div>
+                <br>
+                <div>
+                    <button class="button-78" role="button">Crear Curso</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer th:replace="components/footer::footer"></footer>
+</body>
+</html>
