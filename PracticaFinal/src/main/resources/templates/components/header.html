@@ -18,7 +18,7 @@
                     <ul class="navbar-nav">
                         <div class="nav-item" sec:authorize="!hasAnyAuthority('USUARIO', 'ADMIN')">
                             <li class="nav-item">
-                                <a class="nav-link active" href="/register">Registrarse</a>
+                                <a class="nav-link active" href="/user/register">Registrarse</a>
                             </li>
                         </div>
                         <div class="nav-item" sec:authorize="hasAnyAuthority('USUARIO')">

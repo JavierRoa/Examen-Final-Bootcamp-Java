@@ -32,7 +32,7 @@ public class SecConfig {
                         .antMatchers("/css/**", "/js/**").permitAll()
                         .antMatchers("/", "/courses/**", "/courses2/**").permitAll()
                         .antMatchers("/course/**").hasAuthority("ADMIN")
-                        .antMatchers("/register", "/user/register").anonymous()
+                        .antMatchers("/user/register", "/login").anonymous()
                         .antMatchers("/cpannel", "/apply/**").hasAuthority("USUARIO")
                         .anyRequest().authenticated())
                 .formLogin(form -> form

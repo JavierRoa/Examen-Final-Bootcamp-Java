@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 
 body {
-    background-image: url(https://sti-technology.cl/wp-content/uploads/2020/10/mooc-curso-online-gratis.jpg);
+    background-image: url(https://www.mch.cl/wp-content/uploads/2020/10/herramientas-y-recursos-para-crear-curso-online.png);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -40,7 +40,6 @@ textarea {
     height: 10em;
 }
 
-/* CSS */
 .button-78 {
     align-items: center;
     appearance: none;

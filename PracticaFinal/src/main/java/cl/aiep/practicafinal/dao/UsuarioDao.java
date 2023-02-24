@@ -9,7 +9,6 @@ public interface UsuarioDao {
     Usuario agregar(Usuario usuario);
     void eliminar(Long id);
     Usuario buscar (Long id);
-
     Usuario actualizar (Usuario usuario);
     List<Usuario> listar();
 }

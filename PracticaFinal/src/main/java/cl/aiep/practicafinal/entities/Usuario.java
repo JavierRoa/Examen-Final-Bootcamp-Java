@@ -74,6 +74,6 @@ public class Usuario {
     private Region region;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(nullable = false)
+    @JoinColumn(nullable = true)
     private Curso curso;
 }

@@ -93,7 +93,7 @@ public class WebController {
     public String creacionCurso() {
         return "forms/coursecreation";
     }
-    @GetMapping("/register")
+    @GetMapping("/user/register")
     public String registroUsuario(Model model) {
         model.addAttribute("lista", regionDao.listar());
         return "forms/register";
